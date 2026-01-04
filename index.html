@@ -346,36 +346,40 @@
         }
 
         /* === RESPONSIVE DESIGN === */
-        @media (max-width: 992px) {
-            .hero-title { font-size: 3.2rem; }
-            .content-block { grid-template-columns: 1fr; gap: 3rem; }
-            .content-block.reverse .content-img { order: 1; }
-            .content-block.reverse .content-text { order: 2; }
-            .section-title { font-size: 2.5rem; }
-        }
-        @media (max-width: 768px) {
-            .container { padding: 0 1rem; }
-            .hero { min-height: auto; padding: 4rem 0; }
-            .hero-title { font-size: 2.5rem; }
-            .hero-subtitle { font-size: 1.2rem; }
-            .current-price { font-size: 3rem; }
-            .old-price { font-size: 1.8rem; }
-            .cta-button { padding: 1.3rem 3rem; font-size: 1.2rem; width: 100%; max-width: 350px; }
-            .section { padding: 4rem 0; }
-            .content-text h3 { font-size: 2rem; }
-            .final-cta { padding: 4rem 1.5rem; }
-            .final-cta h2 { font-size: 2.5rem; }
-            .final-cta .current-price { font-size: 3.5rem; }
-        }
-        @media (max-width: 480px) {
-            .hero-title { font-size: 2rem; }
-            .section-title { font-size: 2rem; }
-            .feature-list li { flex-direction: column; }
-            .feature-list li strong { margin-bottom: 0.3rem; }
-        }
-        
-        @media (max-width: 768px) {
-    /* ... autres règles ... */
+@media (max-width: 992px) {
+    .hero-title { font-size: 3.2rem; }
+    .content-block { grid-template-columns: 1fr; gap: 3rem; }
+    .content-block.reverse .content-img { order: 1; }
+    .content-block.reverse .content-text { order: 2; }
+    .section-title { font-size: 2.5rem; }
+}
+@media (max-width: 768px) {
+    .container { padding: 0 1rem; }
+    .hero { 
+        min-height: auto; 
+        padding: 1rem 0 4rem 0 !important; /* ⬅️ CORRECTION ICI */
+    }
+    .hero-badge {
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem; /* Réduit l'espace sous le badge */
+    }
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.2rem; }
+    .current-price { font-size: 3rem; }
+    .old-price { font-size: 1.8rem; }
+    .cta-button { padding: 1.3rem 3rem; font-size: 1.2rem; width: 100%; max-width: 350px; }
+    .section { padding: 4rem 0; }
+    .content-text h3 { font-size: 2rem; }
+    .final-cta { padding: 4rem 1.5rem; }
+    .final-cta h2 { font-size: 2.5rem; }
+    .final-cta .current-price { font-size: 3.5rem; }
+}
+@media (max-width: 480px) {
+    .hero-title { font-size: 2rem; }
+    .section-title { font-size: 2rem; }
+    .feature-list li { flex-direction: column; }
+    .feature-list li strong { margin-bottom: 0.3rem; }
+}
     
     /* AJOUTEZ cette règle : */
     .hero {
