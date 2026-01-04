@@ -62,13 +62,15 @@
     padding: 0;
 }
         .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: url('images/GrindJet%20Pro%20Noir.webp') center/cover no-repeat;
-            opacity: 0.15;
-            z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* ⬇️ REMPLACEZ CETTE URL PAR VOTRE NOUVELLE IMAGE ⬇️ */
+    background: url('images/images/broyeur-fonctionnement.webp') center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 1;
+ /* ⬅️ N'OUBLIEZ PAS CETTE ACCOLADE DE FERMETURE */
         }
         .hero-content {
             position: relative;
@@ -408,6 +410,12 @@
 }
 .feature-list {
     margin: 1.2rem 0 !important; /* Réduit de 2rem */
+}
+        @media (max-width: 768px) {
+    .hero::before {
+        opacity: 0.1; /* Plus transparent sur mobile */
+        background-size: cover; /* Garantit le plein écran */
+    }
 }
     </style>
 </head>
