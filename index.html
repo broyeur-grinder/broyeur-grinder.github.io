@@ -1,3 +1,9 @@
+le header c'est bien, eclerci l'image du header, il ya un filtre dessus et on voit pas assez l'image dessous. tu peu décaler légèrement l'image sur la droit sur mobile pour qu'on voie bien le gronder électrique?
+le reste tu a changer tous, Refai exactement avec le code que je te donne le bas de la page, tu garde que le header, tu adapte pour que tou s'affiche correctement.
+juste après le header ya une image et je voudrai un texte et ensuite l'image.
+remet le rooter mais corrige la datte 2026 et non 2024.:
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -62,7 +68,7 @@
             line-height: 1.2;
         }
         
-        /* === HERO SECTION MODIFIÉE === */
+        /* === HERO SECTION === */
         .hero {
             background: var(--gradient);
             color: white;
@@ -80,20 +86,20 @@
             top: 0; left: 0;
             width: 100%; height: 100%;
             background: url('images/broyeur-fonctionnement.webp') center/cover no-repeat;
-            opacity: 0.15; /* AUGMENTÉ de 0.08 à 0.15 pour mieux voir l'image */
+            opacity: 0.08; /* RÉDUIT de 0.1 à 0.08 pour plus de clarté */
             z-index: 1;
         }
         
-        /* OVERLAY PLUS CLAIR POUR MIEUX VOIR L'IMAGE */
+        /* OVERLAY PLUS CLAIR POUR MEILLEURE LISIBILITÉ */
         .hero-overlay {
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
             background: linear-gradient(
                 135deg, 
-                rgba(15, 23, 42, 0.7) 0%,   /* PLUS CLAIR (0.7 au lieu de 0.85) */
-                rgba(15, 23, 42, 0.4) 50%,   /* PLUS CLAIR (0.4 au lieu de 0.6) */
-                rgba(15, 23, 42, 0.2) 100%   /* PLUS CLAIR (0.2 au lieu de 0.4) */
+                rgba(15, 23, 42, 0.85) 0%, 
+                rgba(15, 23, 42, 0.6) 50%, 
+                rgba(15, 23, 42, 0.4) 100%
             );
             z-index: 1;
         }
@@ -124,25 +130,25 @@
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* AJOUTÉ pour meilleur contraste */
         }
         
         .hero-highlight {
             color: var(--secondary);
             display: block;
             font-weight: 800;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* AJOUTÉ */
         }
         
         .hero-subtitle {
             font-size: 1.1rem;
-            opacity: 0.95;
+            opacity: 0.95; /* AUGMENTÉ de 0.9 à 0.95 */
             margin-bottom: 2.5rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
             font-weight: 400;
-            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); /* AJOUTÉ */
         }
         
         .hero-features {
@@ -159,11 +165,11 @@
             gap: 1rem;
             text-align: left;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1); /* LÉGÈREMENT PLUS CLAIR */
             border-radius: var(--radius);
             backdrop-filter: blur(10px);
             transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1); /* AJOUTÉ pour définition */
         }
         
         .feature-item:hover {
@@ -184,11 +190,11 @@
             display: block;
             font-weight: 600;
             margin-bottom: 0.25rem;
-            color: white;
+            color: white; /* FORCÉ blanc pour contraste */
         }
         
         .feature-text div {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.9); /* PLUS CLAIR que précédemment */
             font-size: 0.9rem;
         }
         
@@ -200,7 +206,7 @@
             font-size: 3.5rem;
             font-weight: 800;
             color: white;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* AJOUTÉ */
         }
         
         .old-price {
@@ -209,7 +215,7 @@
             opacity: 0.7;
             margin-left: 0.75rem;
             vertical-align: top;
-            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); /* AJOUTÉ */
         }
         
         .cta-button {
@@ -252,7 +258,7 @@
         
         .guarantee {
             font-size: 0.9rem;
-            opacity: 0.95;
+            opacity: 0.95; /* AUGMENTÉ */
             max-width: 380px;
             margin: 0 auto;
             display: flex;
@@ -265,52 +271,9 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: rgba(255, 255, 255, 0.95);
-        }
-
-        /* === PREMIÈRE SECTION APRÈS LE HEADER === */
-        .first-content-section {
-            padding: 4rem 0;
+            color: rgba(255, 255, 255, 0.95); /* PLUS CLAIR */
         }
         
-        .first-content-block {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .first-content-img {
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            transition: var(--transition);
-        }
-        
-        .first-content-img:hover {
-            transform: translateY(-5px);
-        }
-        
-        .first-content-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .first-content-text h2 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-        
-        .first-content-text p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            font-weight: 400;
-        }
-
         /* === SECTIONS GÉNÉRALES === */
         .section {
             padding: 4rem 0;
@@ -616,116 +579,6 @@
             color: var(--primary);
         }
         
-        /* === RESPONSIVE : MOBILE === */
-        @media (max-width: 768px) {
-            .container { padding: 0 1.25rem; }
-            
-            .hero {
-                padding: 1.5rem 0 3rem;
-                min-height: 80vh;
-            }
-            
-            /* DÉCALAGE DE L'IMAGE SUR MOBILE */
-            .hero::before {
-                background-position: 70% center; /* Décalage à droite pour voir le grinder */
-            }
-            
-            .hero-title {
-                font-size: 2.2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .hero-features {
-                max-width: 100%;
-            }
-            
-            .feature-item {
-                flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
-            }
-            
-            .current-price {
-                font-size: 3rem;
-            }
-            
-            .cta-button {
-                font-size: 1rem;
-                padding: 1.1rem;
-            }
-            
-            /* PREMIÈRE SECTION APRÈS HEADER */
-            .first-content-section {
-                padding: 3rem 0;
-            }
-            
-            .first-content-block {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-            
-            .first-content-text h2 {
-                font-size: 1.8rem;
-            }
-            
-            .first-content-img {
-                order: 2; /* Image après le texte sur mobile */
-            }
-            
-            .first-content-text {
-                order: 1; /* Texte avant l'image sur mobile */
-            }
-            
-            /* SECTIONS GÉNÉRALES */
-            .section {
-                padding: 3rem 0;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .content-block {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-            
-            .content-block.reverse .content-img {
-                order: 2;
-            }
-            
-            .content-block.reverse .content-text {
-                order: 1;
-            }
-            
-            .specs-scroll {
-                gap: 0.75rem;
-            }
-            
-            .spec-card {
-                width: 200px;
-                padding: 1.5rem;
-            }
-            
-            .final-cta {
-                padding: 3rem 1.25rem;
-                margin: 3rem auto;
-            }
-            
-            .final-cta h2 {
-                font-size: 2rem;
-            }
-            
-            .final-button {
-                padding: 1.1rem 3rem;
-                font-size: 1.1rem;
-                width: 100%;
-            }
-        }
-        
         /* === RESPONSIVE : TABLETTE & DESKTOP === */
         @media (min-width: 768px) {
             .container { padding: 0 2rem; }
@@ -773,14 +626,6 @@
                 font-size: 1.2rem;
             }
             
-            .first-content-section {
-                padding: 5rem 0;
-            }
-            
-            .first-content-text h2 {
-                font-size: 2.5rem;
-            }
-            
             .section {
                 padding: 5rem 0;
             }
@@ -794,7 +639,23 @@
             }
             
             .content-block {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
                 gap: 4rem;
+                align-items: center;
+                margin-bottom: 5rem;
+            }
+            
+            .content-block.reverse .content-img {
+                order: 2;
+            }
+            
+            .content-block.reverse .content-text {
+                order: 1;
+            }
+            
+            .content-img {
+                margin-bottom: 0;
             }
             
             .content-text h3 {
@@ -828,10 +689,6 @@
                 font-size: 4rem;
             }
             
-            .first-content-text h2 {
-                font-size: 2.8rem;
-            }
-            
             .section-title {
                 font-size: 3rem;
             }
@@ -863,9 +720,9 @@
     </style>
 </head>
 <body>
-    <!-- HERO SECTION AMÉLIORÉE -->
+    <!-- HERO SECTION -->
     <section class="hero">
-        <div class="hero-overlay"></div>
+        <div class="hero-overlay"></div> <!-- NOUVEAU : Overlay pour meilleure lisibilité -->
         <div class="container">
             <div class="hero-content scroll-animate">
                 <span class="hero-badge">🚀 Nouvelle Génération • Livraison 48h</span>
@@ -925,26 +782,6 @@
                     <div class="guarantee-item">✅ Paiement 100% sécurisé</div>
                     <div class="guarantee-item">🚚 Livraison GRATUITE</div>
                     <div class="guarantee-item">🛡️ Garantie 30 jours</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PREMIÈRE IMAGE APRÈS LE HEADER (TEXTE PUIS IMAGE) -->
-    <section class="first-content-section">
-        <div class="container">
-            <div class="first-content-block">
-                <div class="first-content-text scroll-animate">
-                    <h2>Architecture de Précision</h2>
-                    <p>Le GrindJet Pro n'est pas un simple broyeur. C'est un système intégré où chaque composant joue un rôle clé pour des performances optimales.</p>
-                    <p>Des lames en acier chirurgical au design ergonomique anti-dérapant, chaque élément a été pensé pour durer et performer dans les conditions les plus exigeantes.</p>
-                    <p>La fenêtre en verre trempé permet un contrôle visuel sans ouvrir l'appareil, tandis que le boîtier étanche garantit un rangement sécurisé et propre.</p>
-                </div>
-                <div class="first-content-img scroll-animate">
-                    <!-- CORRECTION : NOM DE FICHIER SIMPLIFIÉ -->
-                    <img src="images/grindjet-detail-pieces.webp"
-                         alt="Diagramme détaillé des parties du GrindJet Pro" 
-                         loading="lazy">
                 </div>
             </div>
         </div>
@@ -1231,10 +1068,10 @@
         </div>
     </section>
 
-    <!-- FOOTER CORRIGÉ (2026) -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <p>© 2026 GrindJet Pro. Tous droits réservés.</p> <!-- CORRIGÉ : 2026 -->
+            <p>© 2024 GrindJet Pro. Tous droits réservés.</p>
             <div class="footer-links">
                 <a href="#">Conditions générales</a>
                 <a href="#">Politique de confidentialité</a>
@@ -1281,3 +1118,5 @@
     </script>
 </body>
 </html>
+
+;je voudrais aussi que tu vérifie pourquoi l'image 2 qui est la premieere image apres le leader, ne s'affiche pas?
