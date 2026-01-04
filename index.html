@@ -8,9 +8,9 @@
     <style>
         /* === RESET & BASE STYLES === */
         :root {
-            --primary: #111827; /* Noir de luxe */
-            --secondary: #10b981; /* Émeraude */
-            --accent: #3b82f6; /* Bleu vif */
+            --primary: #111827;
+            --secondary: #10b981;
+            --accent: #3b82f6;
             --light: #f9fafb;
             --dark: #1f2937;
             --gray: #6b7280;
@@ -26,7 +26,7 @@
             overflow-x: hidden;
         }
         .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-        .section { padding: 6rem 0; }
+        .section { padding: 3.5rem 0; }
         .section-title {
             font-size: 3rem;
             font-weight: 800;
@@ -47,30 +47,24 @@
         }
 
         /* === HERO SECTION === */
-.hero {
-    position: relative;
-    min-height: 95vh;
-    display: flex;
-    align-items: center;
-    background: var(--gradient);
-    color: white;
-    overflow: hidden;
-    /* SUPPRIMEZ ces 2 lignes : */
-    /* padding-top: 0; */
-    /* margin-top: 0; */
-    /* AJOUTEZ cette ligne : */
-    padding: 0;
-}
+        .hero {
+            position: relative;
+            min-height: 95vh;
+            display: flex;
+            align-items: center;
+            background: var(--gradient);
+            color: white;
+            overflow: hidden;
+            padding: 0;
+        }
         .hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    /* ⬇️ REMPLACEZ CETTE URL PAR VOTRE NOUVELLE IMAGE ⬇️ */
-    background: url('images/broyeur-fonctionnement.webp') center/cover no-repeat;
-    opacity: 0.15;
-    z-index: 1;
- /* ⬅️ N'OUBLIEZ PAS CETTE ACCOLADE DE FERMETURE */
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('images/broyeur-fonctionnement.webp') center/cover no-repeat;
+            opacity: 0.15;
+            z-index: 1;
         }
         .hero-content {
             position: relative;
@@ -184,9 +178,9 @@
         .content-block {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5rem;
+            gap: 3.5rem;
             align-items: center;
-            margin-bottom: 6rem;
+            margin-bottom: 3.5rem;
         }
         .content-block.reverse { grid-template-columns: 1fr 1fr; }
         .content-block.reverse .content-img { order: 2; }
@@ -218,11 +212,11 @@
         .content-text p {
             font-size: 1.15rem;
             color: var(--gray);
-            margin-bottom: 2rem;
+            margin-bottom: 1.2rem;
         }
         .feature-list {
             list-style: none;
-            margin: 2rem 0;
+            margin: 1.2rem 0;
         }
         .feature-list li {
             padding: 0.8rem 0;
@@ -260,7 +254,7 @@
             background: black;
         }
         .video-ratio {
-            padding-top: 56.25%; /* 16:9 */
+            padding-top: 56.25%;
         }
         .video-container iframe {
             position: absolute;
@@ -348,75 +342,44 @@
         }
 
         /* === RESPONSIVE DESIGN === */
-@media (max-width: 992px) {
-    .hero-title { font-size: 3.2rem; }
-    .content-block { grid-template-columns: 1fr; gap: 3rem; }
-    .content-block.reverse .content-img { order: 1; }
-    .content-block.reverse .content-text { order: 2; }
-    .section-title { font-size: 2.5rem; }
-}
-@media (max-width: 768px) {
-    .container { padding: 0 1rem; }
-    .hero { 
-        min-height: auto; 
-        padding: 1rem 0 4rem 0 !important; /* ⬅️ CORRECTION ICI */
-    }
-    .hero-badge {
-        margin-top: 0.5rem;
-        margin-bottom: 1.5rem; /* Réduit l'espace sous le badge */
-    }
-    .hero-title { font-size: 2.5rem; }
-    .hero-subtitle { font-size: 1.2rem; }
-    .current-price { font-size: 3rem; }
-    .old-price { font-size: 1.8rem; }
-    .cta-button { padding: 1.3rem 3rem; font-size: 1.2rem; width: 100%; max-width: 350px; }
-    .section { padding: 4rem 0; }
-    .content-text h3 { font-size: 2rem; }
-    .final-cta { padding: 4rem 1.5rem; }
-    .final-cta h2 { font-size: 2.5rem; }
-    .final-cta .current-price { font-size: 3.5rem; }
-}
-@media (max-width: 480px) {
-    .hero-title { font-size: 2rem; }
-    .section-title { font-size: 2rem; }
-    .feature-list li { flex-direction: column; }
-    .feature-list li strong { margin-bottom: 0.3rem; }
-}
-    
-    /* AJOUTEZ cette règle : */
-    .hero {
-        padding-top: 1rem !important; /* Petit espace sur mobile */
-        min-height: auto; /* Ajuste la hauteur */
-    }
-    .hero-badge {
-        margin-top: 0.5rem; /* Espace réduit */
-    }
-}
-        /* === RÉDUCTION DES ESPACEMENTS === */
-/* 1. Réduit l'espace entre toutes les grandes sections */
-.section {
-    padding: 3.5rem 0 !important; /* Réduit de 6rem */
-}
-
-/* 2. Réduit l'espace entre les blocs de contenu (image + texte) */
-.content-block {
-    margin-bottom: 3.5rem !important; /* Réduit de 6rem */
-    gap: 3.5rem !important; /* Réduit de 5rem */
-}
-
-/* 3. Réduit l'espace au sein des blocs de texte */
-.content-text p {
-    margin-bottom: 1.2rem !important; /* Réduit de 2rem */
-}
-.feature-list {
-    margin: 1.2rem 0 !important; /* Réduit de 2rem */
-}
+        @media (max-width: 992px) {
+            .hero-title { font-size: 3.2rem; }
+            .content-block { grid-template-columns: 1fr; gap: 3rem; }
+            .content-block.reverse .content-img { order: 1; }
+            .content-block.reverse .content-text { order: 2; }
+            .section-title { font-size: 2.5rem; }
+        }
         @media (max-width: 768px) {
-    .hero::before {
-        opacity: 0.1; /* Plus transparent sur mobile */
-        background-size: cover; /* Garantit le plein écran */
-    }
-}
+            .container { padding: 0 1rem; }
+            .hero { 
+                min-height: auto; 
+                padding: 1rem 0 4rem 0 !important;
+            }
+            .hero::before {
+                opacity: 0.1;
+                background-size: cover;
+            }
+            .hero-badge {
+                margin-top: 0.5rem;
+                margin-bottom: 1.5rem;
+            }
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .current-price { font-size: 3rem; }
+            .old-price { font-size: 1.8rem; }
+            .cta-button { padding: 1.3rem 3rem; font-size: 1.2rem; width: 100%; max-width: 350px; }
+            .section { padding: 2rem 0; }
+            .content-text h3 { font-size: 2rem; }
+            .final-cta { padding: 4rem 1.5rem; }
+            .final-cta h2 { font-size: 2.5rem; }
+            .final-cta .current-price { font-size: 3.5rem; }
+        }
+        @media (max-width: 480px) {
+            .hero-title { font-size: 2rem; }
+            .section-title { font-size: 2rem; }
+            .feature-list li { flex-direction: column; }
+            .feature-list li strong { margin-bottom: 0.3rem; }
+        }
     </style>
 </head>
 <body>
