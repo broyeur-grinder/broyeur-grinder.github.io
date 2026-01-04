@@ -4,156 +4,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrindJet Pro - Broyeur Électrique Premium | Broyage Parfait en 10s</title>
-    <meta name="description" content="GrindJet Pro : le broyeur électrique ultime. Design ingénieux, broyage 15 000 tr/min, silencieux, rechargeable USB. Fini le broyage manuel. Livraison rapide. Garantie 30 jours.">
+    <meta name="description" content="Broyeur électrique GrindJet Pro : 15 000 tr/min, silencieux 3dB, recharge USB. Broyage parfait en 10s. Livraison rapide.">
+    
+    <!-- Police Plus Jakarta Sans (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        /* === RESET & BASE STYLES === */
+        /* === VARIABLES & RESET === */
         :root {
-            --primary: #111827;
-            --secondary: #10b981;
-            --accent: #3b82f6;
-            --light: #f9fafb;
-            --dark: #1f2937;
-            --gray: #6b7280;
-            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            --primary: #0f172a;       /* Bleu nuit profond */
+            --secondary: #0d9488;     /* Vert émeraude teal */
+            --accent: #7c3aed;        /* Violet premium */
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
+            --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.08);
+            --shadow-md: 0 6px 20px rgba(15, 23, 42, 0.12);
+            --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.18);
+            --radius: 16px;
+            --radius-lg: 24px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        html { 
+            scroll-behavior: smooth; 
+            scroll-padding-top: 2rem;
+        }
+        
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--dark);
-            background: var(--light);
-            line-height: 1.7;
+            background: white;
+            line-height: 1.6;
             overflow-x: hidden;
+            font-weight: 400;
         }
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-        .section { padding: 3.5rem 0; }
-        .section-title {
-            font-size: 3rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 1rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            line-height: 1.1;
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
         }
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto 4rem;
+        
+        /* === TYPOGRAPHIE === */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
         }
-
+        
         /* === HERO SECTION === */
         .hero {
-            position: relative;
-            min-height: 95vh;
-            display: flex;
-            align-items: center;
             background: var(--gradient);
             color: white;
+            padding: 2rem 0 3.5rem;
+            position: relative;
             overflow: hidden;
-            padding: 0;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
         }
+        
         .hero::before {
             content: '';
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
             background: url('images/broyeur-fonctionnement.webp') center/cover no-repeat;
-            opacity: 0.15;
+            opacity: 0.1;
             z-index: 1;
         }
+        
         .hero-content {
             position: relative;
             z-index: 2;
             text-align: center;
-            padding: 3rem 1rem;
+            width: 100%;
         }
+        
         .hero-badge {
-            display: inline-block;
-            background: var(--secondary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
             color: white;
-            padding: 0.7rem 1.8rem;
-            border-radius: 3rem;
-            font-weight: 700;
-            font-size: 0.95rem;
+            padding: 0.6rem 1.5rem;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.85rem;
             margin-bottom: 2rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
+        
         .hero-title {
-            font-size: 4rem;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
         }
+        
+        .hero-highlight {
+            color: var(--secondary);
+            display: block;
+            font-weight: 800;
+        }
+        
         .hero-subtitle {
-            font-size: 1.5rem;
-            opacity: 0.95;
-            margin-bottom: 3rem;
-            max-width: 800px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            font-weight: 300;
+            font-weight: 400;
         }
+        
         .hero-features {
-            list-style: none;
-            margin: 3rem auto;
-            max-width: 700px;
-            text-align: left;
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2.5rem auto;
+            max-width: 500px;
         }
-        .hero-features li {
-            padding: 0.8rem 0;
-            font-size: 1.2rem;
+        
+        .feature-item {
             display: flex;
             align-items: center;
+            gap: 1rem;
+            text-align: left;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
         }
-        .hero-features li::before {
-            content: "✓";
-            color: var(--secondary);
-            font-weight: bold;
+        
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateX(5px);
+        }
+        
+        .feature-icon {
             font-size: 1.5rem;
-            margin-right: 1rem;
             flex-shrink: 0;
         }
-        .price-block {
-            margin: 3rem 0;
+        
+        .feature-text {
+            flex: 1;
         }
+        
+        .feature-text strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .price-block {
+            margin: 2.5rem 0;
+        }
+        
         .current-price {
-            font-size: 4rem;
-            font-weight: 900;
+            font-size: 3.5rem;
+            font-weight: 800;
             color: white;
         }
+        
         .old-price {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             text-decoration: line-through;
-            color: rgba(255,255,255,0.6);
-            margin-left: 1rem;
-            vertical-align: super;
+            opacity: 0.6;
+            margin-left: 0.75rem;
+            vertical-align: top;
         }
+        
         .cta-button {
             display: inline-block;
+            width: 100%;
+            max-width: 380px;
             background: var(--accent);
             color: white;
-            padding: 1.5rem 4.5rem;
-            font-size: 1.4rem;
+            padding: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            border-radius: 3rem;
+            border-radius: var(--radius);
             text-decoration: none;
-            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
             margin-bottom: 1.5rem;
             border: none;
             cursor: pointer;
             position: relative;
             overflow: hidden;
         }
+        
         .cta-button::after {
             content: '';
             position: absolute;
@@ -162,223 +214,475 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             transition: left 0.7s;
         }
+        
         .cta-button:hover {
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.4);
         }
-        .cta-button:hover::after { left: 100%; }
+        
+        .cta-button:hover::after {
+            left: 100%;
+        }
+        
         .guarantee {
-            font-size: 1rem;
+            font-size: 0.9rem;
             opacity: 0.9;
-            max-width: 500px;
+            max-width: 380px;
             margin: 0 auto;
-        }
-
-        /* === CONTENT BLOCKS === */
-        .content-block {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3.5rem;
-            align-items: center;
-            margin-bottom: 3.5rem;
-        }
-        .content-block.reverse { grid-template-columns: 1fr 1fr; }
-        .content-block.reverse .content-img { order: 2; }
-        .content-block.reverse .content-text { order: 1; }
-        .content-img {
-            border-radius: 1.5rem;
-            overflow: hidden;
-            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.15);
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-            background: white;
-            padding: 1rem;
-        }
-        .content-img:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.2);
-        }
-        .content-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 1rem;
-        }
-        .content-text h3 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-        .content-text p {
-            font-size: 1.15rem;
-            color: var(--gray);
-            margin-bottom: 1.2rem;
-        }
-        .feature-list {
-            list-style: none;
-            margin: 1.2rem 0;
-        }
-        .feature-list li {
-            padding: 0.8rem 0;
-            font-size: 1.1rem;
             display: flex;
-            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
         }
-        .feature-list li strong {
+        
+        .guarantee-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* === SECTIONS GÉNÉRALES === */
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
             color: var(--primary);
-            min-width: 180px;
-            display: inline-block;
         }
-        .feature-list li::before {
-            content: "→";
-            color: var(--secondary);
-            font-weight: bold;
-            margin-right: 1rem;
-            flex-shrink: 0;
-            margin-top: 0.2rem;
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
         }
-
-        /* === VIDEO SECTION === */
+        
+        /* === VIDÉO === */
         .video-section {
-            background: var(--light);
-            position: relative;
+            padding-top: 0;
         }
+        
         .video-container {
             position: relative;
             width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            border-radius: 1.5rem;
+            border-radius: var(--radius-lg);
             overflow: hidden;
-            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--shadow-lg);
             background: black;
         }
+        
         .video-ratio {
-            padding-top: 56.25%;
+            padding-top: 56.25%; /* 16:9 */
         }
+        
         .video-container iframe {
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
             border: none;
         }
-
-        /* === SPECS & COLOR === */
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        
+        /* === BLOCS CONTENU IMAGE+TEXTE === */
+        .content-block {
+            margin-bottom: 4rem;
         }
-        .spec-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 1.5rem;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-            border-top: 5px solid var(--accent);
-            transition: transform 0.3s ease;
-        }
-        .spec-card:hover { transform: translateY(-10px); }
-        .spec-icon { font-size: 3rem; margin-bottom: 1.5rem; }
-        .color-display {
-            text-align: center;
-            margin-top: 4rem;
-        }
-        .color-img {
+        
+        .content-img {
             width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-            border-radius: 1.5rem;
+            border-radius: var(--radius-lg);
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
         }
-
-        /* === FINAL CTA === */
-        .final-cta {
+        
+        .content-img:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .content-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .content-text h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--primary);
+        }
+        
+        .content-text p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            font-weight: 400;
+        }
+        
+        .compact-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .compact-list li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: flex-start;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .compact-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .list-icon {
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+        }
+        
+        .list-label {
+            font-weight: 600;
+            color: var(--primary);
+            min-width: 160px;
+            display: inline-block;
+        }
+        
+        /* === GRILLE SPECS HORIZONTALE SCROLLABLE (MOBILE) === */
+        .specs-scroll {
+            display: flex;
+            gap: 1rem;
+            margin: 2.5rem 0;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--secondary) #f1f5f9;
+        }
+        
+        .specs-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+        
+        .specs-scroll::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 3px;
+        }
+        
+        .specs-scroll::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 3px;
+        }
+        
+        .spec-card {
+            flex: 0 0 auto;
+            width: 220px;
+            background: white;
+            padding: 1.75rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border-top: 4px solid var(--accent);
             text-align: center;
-            background: var(--gradient);
-            color: white;
-            border-radius: 2rem;
-            padding: 6rem 3rem;
-            margin: 4rem auto;
+            transition: var(--transition);
+        }
+        
+        .spec-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .spec-card h4 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .spec-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 0.25rem;
+        }
+        
+        /* === BLOC ASTUCE PRO === */
+        .tip-block {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin: 2.5rem 0;
+            border-left: 4px solid var(--secondary);
             position: relative;
             overflow: hidden;
         }
+        
+        .tip-block::before {
+            content: '💡 ASTUCE PRO';
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: var(--secondary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .tip-content {
+            font-weight: 500;
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+        
+        /* === CTA FINAL === */
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, #334155 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 1.5rem;
+            border-radius: var(--radius-lg);
+            margin: 4rem auto;
+            max-width: 1000px;
+            position: relative;
+            overflow: hidden;
+        }
+        
         .final-cta::before {
             content: '';
             position: absolute;
-            top: -50%; left: -50%;
+            top: -50%; right: -50%;
             width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
-            opacity: 0.3;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.4;
             animation: float 20s linear infinite;
         }
+        
         @keyframes float {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        
         .final-cta h2 {
-            font-size: 3.5rem;
-            font-weight: 900;
+            font-size: 2.5rem;
+            font-weight: 800;
             margin-bottom: 1.5rem;
             position: relative;
             z-index: 2;
         }
-        .final-cta .current-price {
-            font-size: 5rem;
-            margin: 2rem 0;
+        
+        .final-cta p {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+            font-weight: 400;
+        }
+        
+        .final-button {
+            background: var(--accent);
+            color: white;
+            font-size: 1.2rem;
+            padding: 1.25rem 4rem;
             position: relative;
             z-index: 2;
         }
-
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+        
         /* === FOOTER === */
         .footer {
             text-align: center;
             padding: 3rem 0;
             color: var(--gray);
             font-size: 0.9rem;
-            border-top: 1px solid #e5e7eb;
+            border-top: 1px solid #e2e8f0;
         }
-
-        /* === RESPONSIVE DESIGN === */
-        @media (max-width: 992px) {
-            .hero-title { font-size: 3.2rem; }
-            .content-block { grid-template-columns: 1fr; gap: 3rem; }
-            .content-block.reverse .content-img { order: 1; }
-            .content-block.reverse .content-text { order: 2; }
-            .section-title { font-size: 2.5rem; }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
         }
-        @media (max-width: 768px) {
-            .container { padding: 0 1rem; }
-            .hero { 
-                min-height: auto; 
-                padding: 1rem 0 4rem 0 !important;
-            }
-            .hero::before {
-                opacity: 0.1;
-                background-size: cover;
-            }
-            .hero-badge {
-                margin-top: 0.5rem;
-                margin-bottom: 1.5rem;
-            }
-            .hero-title { font-size: 2.5rem; }
-            .hero-subtitle { font-size: 1.2rem; }
-            .current-price { font-size: 3rem; }
-            .old-price { font-size: 1.8rem; }
-            .cta-button { padding: 1.3rem 3rem; font-size: 1.2rem; width: 100%; max-width: 350px; }
-            .section { padding: 2rem 0; }
-            .content-text h3 { font-size: 2rem; }
-            .final-cta { padding: 4rem 1.5rem; }
-            .final-cta h2 { font-size: 2.5rem; }
-            .final-cta .current-price { font-size: 3.5rem; }
+        
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.2s;
         }
-        @media (max-width: 480px) {
-            .hero-title { font-size: 2rem; }
-            .section-title { font-size: 2rem; }
-            .feature-list li { flex-direction: column; }
-            .feature-list li strong { margin-bottom: 0.3rem; }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* === RESPONSIVE : TABLETTE & DESKTOP === */
+        @media (min-width: 768px) {
+            .container { padding: 0 2rem; }
+            
+            .hero {
+                padding: 3rem 0 5rem;
+                min-height: 90vh;
+            }
+            
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .hero-features {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                max-width: 800px;
+            }
+            
+            .feature-item {
+                flex: 1;
+                min-width: 180px;
+                max-width: 250px;
+                flex-direction: column;
+                text-align: center;
+                gap: 0.75rem;
+            }
+            
+            .feature-text strong {
+                margin-bottom: 0.5rem;
+            }
+            
+            .current-price {
+                font-size: 4.5rem;
+            }
+            
+            .cta-button {
+                width: auto;
+                padding: 1.25rem 5rem;
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 5rem 0;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .content-block {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+                align-items: center;
+                margin-bottom: 5rem;
+            }
+            
+            .content-block.reverse .content-img {
+                order: 2;
+            }
+            
+            .content-block.reverse .content-text {
+                order: 1;
+            }
+            
+            .content-img {
+                margin-bottom: 0;
+            }
+            
+            .content-text h3 {
+                font-size: 2rem;
+            }
+            
+            .specs-scroll {
+                overflow-x: visible;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .spec-card {
+                flex: 1;
+                min-width: 200px;
+                max-width: 220px;
+            }
+            
+            .final-cta {
+                padding: 5rem 3rem;
+            }
+            
+            .final-cta h2 {
+                font-size: 3rem;
+            }
+        }
+        
+        /* === DESKTOP LARGE === */
+        @media (min-width: 1024px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+            }
+            
+            .content-block {
+                gap: 5rem;
+            }
+            
+            .content-text h3 {
+                font-size: 2.25rem;
+            }
+            
+            .compact-list li {
+                padding: 0.9rem 0;
+            }
+        }
+        
+        /* === ANIMATIONS AU SCROLL === */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -386,17 +690,47 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content scroll-animate">
                 <span class="hero-badge">🚀 Nouvelle Génération • Livraison 48h</span>
-                <h1 class="hero-title">GrindJet Pro<br><span style="color: var(--secondary);">L'Art du Broyage</span></h1>
-                <p class="hero-subtitle">La fin des grinders manuels. Une mouture parfaite, chaque fois, en 10 secondes chrono. Silence, précision, élégance.</p>
+                <h1 class="hero-title">
+                    GrindJet Pro
+                    <span class="hero-highlight">L'Art du Broyage</span>
+                </h1>
+                <p class="hero-subtitle">
+                    La fin des grinders manuels. Une mouture parfaite, chaque fois, en 10 secondes chrono. 
+                    Silence, précision, élégance.
+                </p>
                 
-                <ul class="hero-features">
-                    <li><strong>15 000 tours/minute</strong> – Vitesse industrielle</li>
-                    <li><strong>3 dB seulement</strong> – Plus silencieux qu'un chuchotement</li>
-                    <li><strong>Batterie longue durée</strong> – 50+ utilisations par charge</li>
-                    <li><strong>Design premium</strong> – Aluminium brossé, acier chirurgical</li>
-                </ul>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-text">
+                            <strong>15 000 tours/min</strong>
+                            <div>Vitesse industrielle</div>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔇</div>
+                        <div class="feature-text">
+                            <strong>3 dB seulement</strong>
+                            <div>Plus silencieux qu'un chuchotement</div>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔋</div>
+                        <div class="feature-text">
+                            <strong>Batterie longue durée</strong>
+                            <div>50+ utilisations par charge</div>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✨</div>
+                        <div class="feature-text">
+                            <strong>Design premium</strong>
+                            <div>Aluminium brossé, acier chirurgical</div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="price-block">
                     <span class="current-price">19,90 CHF</span>
@@ -409,18 +743,25 @@
                    rel="noopener">
                     🔥 Commander Maintenant
                 </a>
-                <p class="guarantee">✅ Paiement 100% sécurisé (Stripe) • Livraison GRATUITE • Garantie "Satisfait ou Remboursé" 30 jours</p>
+                
+                <div class="guarantee">
+                    <div class="guarantee-item">✅ Paiement 100% sécurisé</div>
+                    <div class="guarantee-item">🚚 Livraison GRATUITE</div>
+                    <div class="guarantee-item">🛡️ Garantie 30 jours</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- VIDEO DEMONSTRATION -->
+    <!-- VIDÉO DÉMONSTRATION -->
     <section class="section video-section">
         <div class="container">
-            <h2 class="section-title">Voyez la Différence</h2>
-            <p class="section-subtitle">Une démonstration vaut mille mots. Regardez le GrindJet Pro en action.</p>
+            <h2 class="section-title scroll-animate">Voyez la Différence</h2>
+            <p class="section-subtitle scroll-animate">
+                Une démonstration vaut mille mots. Regardez le GrindJet Pro en action.
+            </p>
             
-            <div class="video-container">
+            <div class="video-container scroll-animate">
                 <div class="video-ratio"></div>
                 <iframe 
                     src="https://www.youtube.com/embed/yUe9cq6mu5o?rel=0&modestbranding=1"
@@ -429,54 +770,103 @@
                     allowfullscreen>
                 </iframe>
             </div>
-            <p style="text-align: center; margin-top: 2rem; color: var(--gray); font-size: 0.95rem;">
+            <p style="text-align: center; margin-top: 2rem; color: var(--gray); font-size: 0.95rem;" class="scroll-animate">
                 ⏱️ Broyage en 10s • 🔊 Son réel (3 dB) • 🎯 Consistance parfaite
             </p>
         </div>
     </section>
 
-    <!-- DESIGN INGENIEUX -->
+    <!-- DESIGN INGÉNIEUX -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Design Ingénieux</h2>
-            <p class="section-subtitle">Chaque détail a été pensé pour l'efficacité, la durabilité et l'expérience utilisateur.</p>
+            <h2 class="section-title scroll-animate">Design Ingénieux</h2>
+            <p class="section-subtitle scroll-animate">
+                Chaque détail a été pensé pour l'efficacité, la durabilité et l'expérience utilisateur.
+            </p>
             
-            <div class="content-block">
+            <div class="content-block scroll-animate">
                 <div class="content-img">
-                    <img src="images/GrindJet%20Pro%20Détaille%20Parties%20et%20pièces.webp" 
+                    <img src="images/GrindJet%20Pro%20Détaille%20Parties%20et%20pièces.webp" 
                          alt="Diagramme détaillé des parties du GrindJet Pro" 
                          loading="lazy">
                 </div>
                 <div class="content-text">
                     <h3>Architecture de Précision</h3>
                     <p>Le GrindJet Pro n'est pas un simple broyeur. C'est un système intégré où chaque composant joue un rôle clé pour des performances optimales.</p>
-                    <ul class="feature-list">
-                        <li><strong>Fenêtre en verre :</strong> Contrôle visuel sans ouvrir</li>
-                        <li><strong>Lames en acier :</strong> Broyage chirurgical et durable</li>
-                        <li><strong>Boîtier étanche :</strong> Rangement sécurisé et propre</li>
-                        <li><strong>Bouchon à visser :</strong> Fermeture hermétique anti-odeur</li>
-                        <li><strong>Indicateur LED :</strong> Niveau de batterie en un coup d'œil</li>
-                        <li><strong>Bouton ergonomique :</strong> Commande facile à une main</li>
+                    
+                    <ul class="compact-list">
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Fenêtre en verre :</span>
+                            Contrôle visuel sans ouvrir
+                        </li>
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Lames en acier :</span>
+                            Broyage chirurgical et durable
+                        </li>
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Boîtier étanche :</span>
+                            Rangement sécurisé et propre
+                        </li>
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Bouchon à visser :</span>
+                            Fermeture hermétique anti-odeur
+                        </li>
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Indicateur LED :</span>
+                            Niveau de batterie en un coup d'œil
+                        </li>
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Bouton ergonomique :</span>
+                            Commande facile à une main
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FONCTIONNEMENT & POLYVALENCE -->
+    <!-- FONCTIONNEMENT OPTIMAL -->
     <section class="section" style="background: var(--light);">
         <div class="container">
-            <div class="content-block reverse">
+            <div class="content-block reverse scroll-animate">
                 <div class="content-text">
                     <h3>Fonctionnement Optimal</h3>
                     <p>Conçu pour s'adapter à votre rythme. Simple, efficace, et polyvalent pour tous vos besoins de broyage.</p>
-                    <ul class="feature-list">
-                        <li><strong>Capacité intelligente :</strong> Remplissage optimal (1/3) pour une mouture uniforme</li>
-                        <li><strong>Utilisation à une main :</strong> Design ergonomique parfaitement équilibré</li>
-                        <li><strong>Polyvalence :</strong> Idéal pour herbes aromatiques et épices de dureté moyenne</li>
-                        <li><strong>Nettoyage facile :</strong> Tête de coupe amovible en acier inoxydable</li>
+                    
+                    <ul class="compact-list">
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Capacité intelligente :</span>
+                            Remplissage optimal (1/3) pour une mouture uniforme
+                        </li>
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Utilisation à une main :</span>
+                            Design ergonomique parfaitement équilibré
+                        </li>
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Polyvalence :</span>
+                            Idéal pour herbes aromatiques et épices
+                        </li>
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Nettoyage facile :</span>
+                            Tête de coupe amovible en acier inoxydable
+                        </li>
                     </ul>
-                    <p style="margin-top: 1.5rem; font-style: italic; color: var(--secondary);">"Enfin un broyeur qui comprend comment je l'utilise."</p>
+                    
+                    <div class="tip-block">
+                        <div class="tip-content">
+                            "Enfin un broyeur qui comprend comment je l'utilise. La capacité optimale de 1/3 est parfaite pour une mouture uniforme à chaque fois."
+                        </div>
+                    </div>
                 </div>
                 <div class="content-img">
                     <img src="images/broyeur-fonctionnement-herbe.webp" 
@@ -490,9 +880,9 @@
     <!-- TECHNOLOGIE & AUTONOMIE -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Technologie & Autonomie</h2>
+            <h2 class="section-title scroll-animate">Technologie & Autonomie</h2>
             
-            <div class="content-block">
+            <div class="content-block scroll-animate">
                 <div class="content-img">
                     <img src="images/GrindJet%20Pro%20Charge%20USB.webp" 
                          alt="Détail du port de chargement USB et de l'indicateur de batterie" 
@@ -501,40 +891,61 @@
                 <div class="content-text">
                     <h3>Alimentation Intelligente</h3>
                     <p>Oubliez les piles. La technologie intégrée garantit une autonomie longue durée et une recharge ultra-rapide.</p>
-                    <ul class="feature-list">
-                        <li><strong>Batterie lithium 600mAh :</strong> Jusqu'à 2 semaines d'utilisation normale</li>
-                        <li><strong>Port USB-C :</strong> Recharge rapide sur powerbank, ordinateur ou prise</li>
-                        <li><strong>Indicateur 4 LEDs :</strong> Niveau de charge précis à 25% près</li>
-                        <li><strong>Sécurité intégrée :</strong> Protection contre les surcharges et courts-circuits</li>
-                        <li><strong>Interrupteur de sécurité :</strong> Verrouillage pour éviter tout déclenchement accidentel</li>
+                    
+                    <ul class="compact-list">
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Batterie lithium 600mAh :</span>
+                            Jusqu'à 2 semaines d'utilisation normale
+                        </li>
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Port USB-C :</span>
+                            Recharge rapide sur powerbank, ordinateur ou prise
+                        </li>
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Indicateur 4 LEDs :</span>
+                            Niveau de charge précis à 25% près
+                        </li>
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Sécurité intégrée :</span>
+                            Protection contre les surcharges et courts-circuits
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FORMAT COMPACT -->
+    <!-- FORMAT COMPACT, PERFORMANCE MAX -->
     <section class="section" style="background: var(--light);">
         <div class="container">
-            <div class="content-block reverse">
+            <div class="content-block reverse scroll-animate">
                 <div class="content-text">
                     <h3>Format Compact, Performance Maximale</h3>
                     <p>La puissance ne doit pas être encombrante. Le GrindJet Pro a été miniaturisé sans compromis sur les performances.</p>
-                    <div class="specs-grid" style="margin-top: 2rem;">
+                    
+                    <p style="margin-bottom: 2rem; color: var(--gray);">
+                        Malgré sa taille réduite, il conserve toutes les fonctionnalités premium et une puissance de broyage exceptionnelle.
+                    </p>
+                    
+                    <div class="specs-scroll">
                         <div class="spec-card">
-                            <div class="spec-icon">📏</div>
                             <h4>145 mm</h4>
-                            <p>Hauteur totale<br><small>Parfait pour la poche</small></p>
+                            <p>Hauteur totale</p>
+                            <small>Parfait pour la poche</small>
                         </div>
                         <div class="spec-card">
-                            <div class="spec-icon">⚖️</div>
                             <h4>150 g</h4>
-                            <p>Poids plume<br><small>À peine le sentir</small></p>
+                            <p>Poids plume</p>
+                            <small>À peine le sentir</small>
                         </div>
                         <div class="spec-card">
-                            <div class="spec-icon">🔧</div>
                             <h4>28 mm</h4>
-                            <p>Diamètre du compartiment<br><small>Capacité optimale</small></p>
+                            <p>Diamètre du compartiment</p>
+                            <small>Capacité optimale</small>
                         </div>
                     </div>
                 </div>
@@ -550,7 +961,7 @@
     <!-- ENTRETIEN FACILE -->
     <section class="section">
         <div class="container">
-            <div class="content-block">
+            <div class="content-block scroll-animate">
                 <div class="content-img">
                     <img src="images/GrindJet%20Pro%20Nettoyer.webp" 
                          alt="Illustration du nettoyage facile de la tête de coupe en acier inoxydable" 
@@ -559,46 +970,66 @@
                 <div class="content-text">
                     <h3>Entretien en 30 Secondes</h3>
                     <p>Un produit premium mérite un entretien simple. Le GrindJet Pro a été conçu pour être facile à nettoyer et à maintenir.</p>
-                    <ul class="feature-list">
-                        <li><strong>Tête de coupe amovible :</strong> Démontage sans outil en 2 secondes</li>
-                        <li><strong>Acier inoxydable :</strong> Résiste à l'oxydation et aux taches</li>
-                        <li><strong>Design sans recoins :</strong> Aucun résidu ne reste coincé</li>
-                        <li><strong>Nettoyage à sec :</strong> Simple coup de brosse suffit</li>
+                    
+                    <ul class="compact-list">
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Tête de coupe amovible :</span>
+                            Démontage sans outil en 2 secondes
+                        </li>
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Acier inoxydable :</span>
+                            Résiste à l'oxydation et aux taches
+                        </li>
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Design sans recoins :</span>
+                            Aucun résidu ne reste coincé
+                        </li>
+                        <li>
+                            <span class="list-icon">→</span>
+                            <span class="list-label">Nettoyage à sec :</span>
+                            Simple coup de brosse suffit
+                        </li>
                     </ul>
-                    <p style="margin-top: 1.5rem; padding: 1rem; background: #f0fdf4; border-radius: 0.5rem; border-left: 4px solid var(--secondary);">
-                        <strong>Conseil Pro :</strong> Utilisez la petite brosse fournie après chaque utilisation pour garder des lames toujours tranchantes.
-                    </p>
+                    
+                    <div class="tip-block">
+                        <div class="tip-content">
+                            Utilisez la petite brosse fournie après chaque utilisation pour garder des lames toujours tranchantes. Un entretien régulier assure des performances optimales à long terme.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FINAL CTA -->
+    <!-- CTA FINAL -->
     <section class="final-cta">
         <div class="container">
-            <h2>Votre Nouveau Compagnon<br>Vous Attend</h2>
-            <p style="font-size: 1.3rem; opacity: 0.95; max-width: 700px; margin: 0 auto 2rem; position: relative; z-index: 2;">
+            <h2 class="scroll-animate">Votre Nouveau Compagnon Vous Attend</h2>
+            <p class="scroll-animate">
                 Rejoignez les milliers d'utilisateurs qui ont révolutionné leur routine. 
                 <strong style="color: var(--secondary);">Plus rapide, plus silencieux, plus intelligent.</strong>
             </p>
             
-            <div class="price-block">
+            <div class="price-block scroll-animate">
                 <span class="current-price">19,90 CHF</span>
                 <span class="old-price">49,90 CHF</span>
             </div>
             
             <a href="https://buy.stripe.com/aFafZh5hL5WNgZ05eN3VC00" 
-               class="cta-button" 
+               class="cta-button final-button scroll-animate" 
                target="_blank" 
-               rel="noopener"
-               style="background: white; color: var(--primary); font-size: 1.5rem; padding: 1.5rem 5rem;">
+               rel="noopener">
                 ⚡ Obtenir Mon GrindJet Pro
             </a>
             
-            <div style="margin-top: 3rem; position: relative; z-index: 2;">
-                <p style="margin-bottom: 0.5rem;">🛡️ <strong>Garantie totale 30 jours</strong> – Remboursement sans question</p>
-                <p style="margin-bottom: 0.5rem;">🚚 <strong>Livraison express 48h</strong> – Suivi en temps réel</p>
-                <p>🔒 <strong>Paiement 100% sécurisé</strong> – Stripe & cryptage bancaire</p>
+            <div class="benefits-grid scroll-animate">
+                <div class="benefit-item">🛡️ <strong>Garantie totale 30 jours</strong> – Remboursement sans question</div>
+                <div class="benefit-item">🚚 <strong>Livraison express 48h</strong> – Suivi en temps réel</div>
+                <div class="benefit-item">🔒 <strong>Paiement 100% sécurisé</strong> – Stripe & cryptage bancaire</div>
+                <div class="benefit-item">📞 <strong>Support réactif</strong> – Réponse sous 24h</div>
             </div>
         </div>
     </section>
@@ -607,45 +1038,46 @@
     <footer class="footer">
         <div class="container">
             <p>© 2024 GrindJet Pro. Tous droits réservés.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.8rem;">
-                <a href="#" style="color: var(--gray); text-decoration: none; margin: 0 0.5rem;">Conditions générales</a> • 
-                <a href="#" style="color: var(--gray); text-decoration: none; margin: 0 0.5rem;">Politique de confidentialité</a> • 
-                <a href="#" style="color: var(--gray); text-decoration: none; margin: 0 0.5rem;">Contact</a>
-            </p>
+            <div class="footer-links">
+                <a href="#">Conditions générales</a>
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Contact</a>
+                <a href="#">FAQ</a>
+            </div>
         </div>
     </footer>
 
     <script>
         // Animation au défilement
         document.addEventListener('DOMContentLoaded', function() {
-            // Animation des images au scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
+            // Observer pour les animations au scroll
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.classList.add('visible');
                     }
                 });
-            }, observerOptions);
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
             
-            // Applique l'animation aux images et cartes
-            document.querySelectorAll('.content-img, .spec-card').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            // Observer tous les éléments avec la classe scroll-animate
+            document.querySelectorAll('.scroll-animate').forEach(el => {
                 observer.observe(el);
             });
             
             // Suivi des conversions
             document.querySelectorAll('.cta-button').forEach(button => {
                 button.addEventListener('click', function() {
-                    // Intégrez votre code de suivi ici (Google Analytics, Facebook Pixel, etc.)
-                    console.log('Conversion tracked: GrindJet Pro purchase');
+                    // Intégrez votre code de suivi ici
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'conversion', {
+                            'send_to': 'AW-XXXXX/YYYY',
+                            'value': 19.90,
+                            'currency': 'CHF'
+                        });
+                    }
                 });
             });
         });
