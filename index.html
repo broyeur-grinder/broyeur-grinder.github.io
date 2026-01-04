@@ -1,423 +1,454 @@
-<!-- HERO AVEC IMAGE -->
-<section class="bt-hero-with-image">
-  <!-- Conteneur de l'image et du texte superposé -->
-  <div class="bt-hero-image-container">
-    <!-- REMPLACEZ "URL_DE_VOTRE_IMAGE" par le lien direct de votre image -->
-    <img 
-  src="images/broyeur-hero.webp"
-  alt="Broyeur électrique portable – broyage rapide et précis"
-  class="bt-hero-image">
-    
-    <!-- Texte et CTA superposés sur l'image -->
-    <div class="bt-hero-content">
-      <p class="bt-kicker">Broyeur Électrique • Broyage Parfait en 10s • Silencieux (3 dB)</p>
-      <h1>GrindJet Pro : Fini le broyage manuel</h1>
-      <p class="bt-hero-subtitle"><strong>La consistance parfaite en un seul bouton.</strong> Rapide, discret, rechargeable partout.</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrindJet Pro - Broyeur Électrique USB | Broyage Parfait en 10s</title>
+    <meta name="description" content="Broyeur électrique GrindJet Pro : Broyage ultra-rapide à 15 000 tr/min. Silencieux (3 dB). Recharge USB. Livraison rapide. Garantie 30 jours.">
+    <style>
+        /* === RESET & BASE === */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            color: #2d3748;
+            background: #f9fafb;
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 
-      <ul class="bt-bullets-overlay">
-        <li>✅ Broyage automatique 15 000 tr/min</li>
-        <li>✅ Silencieux (3 dB) pour une utilisation discrète</li>
-        <li>✅ Recharge USB - Autonomie longue durée</li>
-      </ul>
+        /* === HERO SECTION (OPTIMISÉE) === */
+        .hero-section {
+            position: relative;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            margin: 2rem auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%);
+            z-index: 2;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            color: white;
+            text-align: left;
+            padding: 3rem;
+            max-width: 650px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 2rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        .hero-subtitle {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            max-width: 90%;
+        }
+        .hero-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+        .hero-features li {
+            padding: 0.6rem 0;
+            font-size: 1.1rem;
+        }
+        .hero-features li::before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.75rem;
+        }
+        .price-block {
+            margin-bottom: 2rem;
+        }
+        .current-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+        .old-price {
+            font-size: 1.8rem;
+            text-decoration: line-through;
+            color: #cbd5e0;
+            margin-left: 1rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.25rem 3.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 3rem;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.6);
+        }
+        .guarantee {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
 
-      <div class="bt-cta-overlay">
-        <a class="bt-btn-hero"
-   href="https://buy.stripe.com/aFafZh5hL5WNgZ05eN3VC00"
-   target="_blank" rel="noopener">
-  Acheter maintenant – 9,49 CHF
-</a>
+        /* === CONTENT SECTIONS === */
+        .section {
+            padding: 5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1a202c;
+        }
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #4a5568;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
 
-        <p class="bt-subcta-hero">Livraison suivie • Paiement sécurisé • 30 jours satisfait/remboursé</p>
-      </div>
+        /* === BENEFITS GRID === */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        .benefit-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid #4299e1;
+            transition: transform 0.3s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .benefit-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        /* === SPECS TABLE === */
+        .specs-table {
+            width: 100%;
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-top: 2rem;
+        }
+        .specs-table tr:nth-child(even) { background: #f8fafc; }
+        .specs-table th, .specs-table td {
+            padding: 1.5rem 2rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .specs-table th {
+            background: #edf2f7;
+            font-weight: 700;
+            color: #2d3748;
+            width: 35%;
+        }
+
+        /* === FAQ === */
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item {
+            background: white;
+            border-radius: 1rem;
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        }
+        .faq-question {
+            padding: 1.5rem 2rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #2d3748;
+        }
+        .faq-answer {
+            padding: 0 2rem 1.5rem;
+            color: #4a5568;
+            display: none;
+        }
+        .faq-item.active .faq-answer { display: block; }
+        .faq-toggle { font-size: 1.5rem; color: #667eea; }
+
+        /* === FINAL CTA === */
+        .final-cta {
+            text-align: center;
+            background: linear-gradient(135deg, #f6f9fc 0%, #edf2f7 100%);
+            border-radius: 2rem;
+            padding: 4rem;
+            margin: 4rem auto;
+        }
+        .final-price {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #1a202c;
+            margin: 1rem 0;
+        }
+        .final-button {
+            font-size: 1.5rem;
+            padding: 1.5rem 5rem;
+            margin-top: 2rem;
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .container { padding: 0 1rem; }
+            .hero-section { min-height: 70vh; margin: 1rem auto; border-radius: 1rem; }
+            .hero-content { padding: 2rem; text-align: center; }
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.2rem; max-width: 100%; }
+            .current-price { font-size: 2.5rem; }
+            .old-price { font-size: 1.5rem; }
+            .cta-button { padding: 1.25rem 2.5rem; font-size: 1.2rem; width: 100%; max-width: 350px; }
+            .section { padding: 3.5rem 0; }
+            .section-title { font-size: 2rem; }
+            .benefits-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .benefit-card { padding: 2rem 1.5rem; }
+            .specs-table th, .specs-table td { padding: 1.25rem; display: block; width: 100%; }
+            .specs-table th { background: #e2e8f0; }
+            .final-cta { padding: 3rem 1.5rem; }
+            .final-price { font-size: 3rem; }
+            .final-button { padding: 1.25rem 3rem; font-size: 1.3rem; width: 100%; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .current-price { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Toggle
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const item = question.parentElement;
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <img src="images/broyeur-hero.webp" alt="GrindJet Pro en action - Broyeur électrique élégant" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">🚀 NOUVEAU | LIVRAISON RAPIDE</span>
+                <h1 class="hero-title">GrindJet Pro<br>La Révolution du Broyage</h1>
+                <p class="hero-subtitle">Oubliez les grinders manuels. Obtenez une mouture parfaite en 10 secondes, sans effort et en silence.</p>
+                
+                <ul class="hero-features">
+                    <li><strong>15 000 tours/minute</strong> – Broyage ultra-rapide</li>
+                    <li><strong>Seulement 3 dB de bruit</strong> – Discret partout</li>
+                    <li><strong>Recharge USB-C</strong> – Utilisez n'importe quel chargeur</li>
+                    <li><strong>Lames en acier chirurgical</strong> – Précision et durabilité</li>
+                </ul>
+
+                <div class="price-block">
+                    <span class="current-price">19,90 CHF</span>
+                    <span class="old-price">49,90 CHF</span>
+                </div>
+
+                <a href="https://buy.stripe.com/aFafZh5hL5WNgZ05eN3VC00" 
+                   class="cta-button" 
+                   target="_blank" 
+                   rel="noopener">
+                    🛒 Commander Maintenant
+                </a>
+                <p class="guarantee">✅ Paiement 100% sécurisé • Livraison suivie GRATUITE • Garantie 30 jours "Satisfait ou Remboursé"</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- POURQUOI CHOISIR GRINDJET -->
+        <section class="section">
+            <h2 class="section-title">Pourquoi GrindJet Pro Change Tout</h2>
+            <p class="section-subtitle">Conçu pour ceux qui refusent les compromis entre vitesse, discrétion et qualité de broyage.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3 class="benefit-title">Vitesse Industrielle</h3>
+                    <p>15 000 tours/minute réduisent vos herbes en une consistance parfaite (fine ou grossière) en moins de 10 secondes. C'est 10x plus rapide qu'un broyeur manuel.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔇</div>
+                    <h3 class="benefit-title">Furtivité Totale</h3>
+                    <p>Avec seulement 3 dB, c'est l'un des broyeurs les plus silencieux du marché. Utilisez-le en appartement, en voyage, sans jamais attirer l'attention.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔋</div>
+                    <h3 class="benefit-title">Liberté USB-C</h3>
+                    <p>Plus besoin de piles. Branchez-le sur votre powerbank, ordinateur ou prise murale. Une charge = 50+ utilisations. L'ultime commodité.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- POUR QUI ? -->
+        <section class="section">
+            <h2 class="section-title">Parfait Pour...</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card" style="border-top-color: #10b981;">
+                    <h3 class="benefit-title">Le Connaisseur</h3>
+                    <p>Vous exigez une mouture constante pour une combustion parfaite et des saveurs préservées. GrindJet offre la précision que vous méritez.</p>
+                </div>
+                <div class="benefit-card" style="border-top-color: #ed8936;">
+                    <h3 class="benefit-title">Le Nomade Urbain</h3>
+                    <p>Compact, discret et rechargeable n'importe où. Il glisse dans votre poche et est prêt en quelques secondes, où que vous soyez.</p>
+                </div>
+                <div class="benefit-card" style="border-top-color: #9f7aea;">
+                    <h3 class="benefit-title">Le Cuisinier Créatif</h3>
+                    <p>Broyez herbes, épices, ou mélanges secs avec une précision chirurgicale. Transformez vos recettes sans effort.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARACTÉRISTIQUES TECHNIQUES -->
+        <section class="section">
+            <h2 class="section-title">Fiche Technique</h2>
+            <table class="specs-table">
+                <tr><th>Matériaux</th><td>Lames : acier inoxydable 304 / Corps : alliage aluminium premium</td></tr>
+                <tr><th>Dimensions</th><td>10 x 5 cm (compact, tient dans la paume)</td></tr>
+                <tr><th>Poids</th><td>150 g (léger mais solide)</td></tr>
+                <tr><th>Couleurs disponibles</th><td>Noir mat, Bleu nuit, Gris titane</td></tr>
+                <tr><th>Alimentation</th><td>Batterie lithium 600mAh, recharge par USB-C (câble inclus)</td></tr>
+                <tr><th>Autonomie</th><td>~50 cycles de broyage de 10 secondes par charge</td></tr>
+                <tr><th>Fonctions spéciales</th><td>Interrupteur bidirectionnel, protection anti-blocage (arrêt auto après 2 sec), design ergonomique anti-dérapant</td></tr>
+                <tr><th>Contenu du pack</th><td>1x GrindJet Pro, 1x Câble USB-C, 1x Brosse de nettoyage, 1x Notice multilingue</td></tr>
+            </table>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <h2 class="section-title">Questions Fréquentes</h2>
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">Est-il vraiment silencieux ? <span class="faq-toggle">+</span></div>
+                    <div class="faq-answer">Absolument. À 3 dB, c'est le son d'un chuchotement. Parfait pour une utilisation en appartement, la nuit, ou dans tout espace où la discrétion est importante.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Combien de temps dure la batterie ? <span class="faq-toggle">+</span></div>
+                    <div class="faq-answer">Une charge complète (environ 1 heure) permet 50 à 60 cycles de broyage de 10 secondes, soit plusieurs semaines d'utilisation normale. Livré pré-chargé à 30%.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Puis-je le nettoyer avec de l'eau ? <span class="faq-toggle">+</span></div>
+                    <div class="faq-answer">Non. Utilisez uniquement la brosse fournie ou un pinceau sec. Les composants électroniques ne sont pas étanches. Pour un nettoyage profond, un chiffon légèrement humide sur le corps extérieur seulement.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Délai de livraison ? <span class="faq-question">+</span></div>
+                    <div class="faq-answer">2-4 jours ouvrés en Suisse. Vous recevez un numéro de suivi par email dès l'expédition. Livraison GRATUITE sur toutes les commandes.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="final-cta">
+            <h2 style="font-size: 2.8rem; margin-bottom: 1rem;">Prêt à Révolutionner Votre Routine ?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 1.5rem; color: #4a5568;">Rejoignez les milliers d'utilisateurs satisfaits.</p>
+            
+            <div style="margin: 2.5rem 0;">
+                <span class="final-price">19,90 CHF</span>
+                <div style="font-size: 1.2rem; color: #718096;">+ Livraison offerte • Garantie 30 jours</div>
+            </div>
+
+            <a href="https://buy.stripe.com/aFafZh5hL5WNgZ05eN3VC00" 
+               class="cta-button final-button" 
+               target="_blank" 
+               rel="noopener">
+               🔥 Commandez Votre GrindJet Pro Maintenant
+            </a>
+            
+            <p style="margin-top: 2rem; font-size: 0.95rem; color: #718096;">
+                ⚡ Stock limité à ce prix promotionnel • Paiement sécurisé par carte, Twint, PayPal
+            </p>
+        </section>
     </div>
-  </div>
-</section>
 
-  <!-- PROBLÈME → SOLUTION -->
-  <section class="bt-section">
-    <h2>Pourquoi tu vas l’adorer</h2>
-    <p>
-      Si tu en as marre des grinders manuels qui coincent et fatiguent la main, ce modèle est fait pour toi :
-      <strong>obtenir une mouture parfaite</strong> sans effort et en un temps record.
-    </p>
-
-    <div class="bt-grid-3">
-      <div class="bt-card">
-        <h3>Vitesse Pro</h3>
-        <p>Avec ses 15 000 tours/minute, il réduit tout en poudre fine ou grossière en moins de 10 secondes. C'est 10x plus rapide qu'à la main.</p>
-      </div>
-      <div class="bt-card">
-        <h3>Discrétion Totale</h3>
-        <p>Son moteur spécial n'émet que 3 dB. Parfait pour une utilisation en appartement ou en déplacement sans attirer l'attention.</p>
-      </div>
-      <div class="bt-card">
-        <h3>Liberté USB</h3>
-        <p>Plus besoin de piles. Branchez-le sur un powerbank, un chargeur de téléphone ou votre PC. Il est opérationnel partout.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- POUR QUI -->
-  <section class="bt-section">
-    <h2>Pour qui c’est parfait ?</h2>
-    <ul class="bt-checklist">
-      <li>✔️ Pour le fumeur quotidien qui veut gagner du temps et avoir une mouture constante</li>
-      <li>✔️ Pour le cuisinier qui veut broyer rapidement des herbes ou des épices fraîches</li>
-      <li>✔️ Pour le nomade qui recherche un accessoire compact, discret et facile à recharger</li>
-      <li>❌ Pas idéal si tu veux broyer des noix, des grains de café ou des matériaux très durs</li>
-    </ul>
-  </section>
-
-  <!-- DÉMO / MODE D’EMPLOI -->
-  <section class="bt-section">
-    <h2>Comment ça s’utilise ?</h2>
-    <ol class="bt-steps">
-      <li><strong>Étape 1 :</strong> Chargez-le via le câble USB fourni (1h pour une charge complète).</li>
-      <li><strong>Étape 2 :</strong> Remplissez le bol, refermez et maintenez le bouton pendant 5 à 10 secondes.</li>
-      <li><strong>Étape 3 :</strong> Profitez de votre mouture parfaite, prête à l'emploi.</li>
-    </ol>
-    <p class="bt-note"><em>Astuce :</em> Pour un nettoyage facile, utilisez une petite brosse sèche sur les lames après utilisation.</p>
-  </section>
-
-  <!-- CARACTÉRISTIQUES -->
-  <section class="bt-section">
-    <h2>Caractéristiques</h2>
-    <table class="bt-table">
-      <tbody>
-        <tr><th>Matériaux</th><td>Lames en acier inoxydable, corps en alliage de zinc/aluminium</td></tr>
-        <tr><th>Dimensions / poids</th><td>10 x 5 cm / 150 g</td></tr>
-        <tr><th>Couleurs</th><td>Noir, Bleu, Gris</td></tr>
-        <tr><th>Alimentation</th><td>Batterie lithium rechargeable via câble USB (fourni)</td></tr>
-        <tr><th>Autonomie / capacité</th><td>~50 utilisations / Capacité max : 2g</td></tr>
-        <tr><th>Fonctions</th><td>Broyage électrique, interrupteur bidirectionnel, protection anti-blocage</td></tr>
-        <tr><th>Contenu du pack</th><td>1 x Broyeur GrindJet Pro, 1 x Câble USB, 1 x Notice d'utilisation</td></tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- PREUVES / RASSURANCE -->
-  <section class="bt-section">
-    <h2>Rassure-toi : on a tout prévu</h2>
-    <div class="bt-grid-3">
-      <div class="bt-card">
-        <h3>📦 Livraison suivie</h3>
-        <p>Tu reçois un numéro de suivi dès l’expédition. Suivez votre colis jusqu'à votre boîte aux lettres.</p>
-      </div>
-      <div class="bt-card">
-        <h3>🛡️ Garantie & retours</h3>
-        <p>30 jours satisfait ou remboursé — si le produit ne vous convient pas, nous le reprenons sans poser de questions.</p>
-      </div>
-      <div class="bt-card">
-        <h3>💬 Support réactif</h3>
-        <p>Une question ? Notre équipe répond sous 24h pour vous apporter une solution concrète.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="bt-section">
-    <h2>FAQ</h2>
-
-    <details class="bt-faq">
-      <summary>Est-ce compatible avec les herbes aromatiques fraîches ?</summary>
-      <p>Oui, parfaitement. Il est conçu pour broyer les herbes séchées et aromatiques. Pour les herbes très fraîches et humides, assurez-vous qu'elles sont bien séchées pour un résultat optimal.</p>
-    </details>
-
-    <details class="bt-faq">
-      <summary>Combien de temps dure la batterie ?</summary>
-      <p>Une charge complète permet environ 50 cycles de broyage de 10 secondes. La batterie est livrée chargée à 30%, pensez à la charger avant la première utilisation.</p>
-    </details>
-
-    <details class="bt-faq">
-      <summary>Comment l’entretenir ?</summary>
-      <p>Utilisez la petite brosse fournie ou un pinceau sec pour retirer les résidus des lames. Évitez absolument de le passer sous l'eau ou d'utiliser des détergents.</p>
-    </details>
-
-    <details class="bt-faq">
-      <summary>Je me trompe de modèle/couleur, je fais comment ?</summary>
-      <p>Contactez notre support dans les 48h après réception et nous organiserons un échange selon nos conditions. Les frais de retour peuvent être à votre charge.</p>
-    </details>
-  </section>
-
-  <!-- BLOC ACHAT -->
-  <section class="bt-section bt-buy" id="acheter">
-    <h2>GrindJet Pro - Broyeur Électrique USB</h2>
-    <p><strong>CHF 9.49</strong> <span class="bt-price-old">CHF 18.98</span></p>
-    <ul class="bt-bullets">
-      <li>✅ Broyage ultra-rapide à 15 000 tr/min</li>
-      <li>✅ Presque silencieux (3 dB) et très discret</li>
-      <li>✅ Rechargeable partout avec un câble USB</li>
-    </ul>
-    <p><a class="bt-btn" href="#">Commander Maintenant</a></p>
-    <p class="bt-subcta">Paiement sécurisé • Livraison suivie • Garantie 30 jours</p>
-  </section>
-
-  <!-- PETITE DESCRIPTION WOO -->
-  <section class="bt-section bt-woo-short">
-    <h2>Description courte (WooCommerce)</h2>
-    <p>
-      <strong>GrindJet Pro - Broyeur Électrique USB</strong> — Broyage parfait en 10 secondes.
-      ✅ Broyage 15 000 tr/min • ✅ Silencieux (3 dB) • ✅ Rechargeable USB.
-      Livraison suivie + Satisfait ou remboursé 30 jours.
-    </p>
-  </section>
-
-</div>
-
-<!-- STYLE BRANDING "GRINDJET" -->
-<style>
-.bt-product-page {
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  max-width: 1000px;
-  margin: auto;
-  color: #333;
-  line-height: 1.6;
-}
-.bt-hero {
-  text-align: center;
-  padding: 3rem 1rem;
-  background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
-  color: white;
-  border-radius: 12px;
-  margin-bottom: 3rem;
-}
-.bt-kicker {
-  color: #27ae60;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
-}
-.bt-hero h1 {
-  font-size: 2.5rem;
-  margin: 1rem 0;
-  color: white;
-}
-.bt-bullets {
-  list-style: none;
-  padding: 0;
-  margin: 2rem auto;
-  max-width: 600px;
-  text-align: left;
-}
-.bt-bullets li {
-  padding: 0.5rem 0;
-  border-bottom: 1px dashed rgba(255,255,255,0.2);
-}
-.bt-cta { margin-top: 2.5rem; }
-.bt-btn {
-  display: inline-block;
-  background: #e74c3c;
-  color: white;
-  padding: 1rem 3rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2rem;
-  transition: transform 0.3s, background 0.3s;
-}
-.bt-btn:hover {
-  background: #c0392b;
-  transform: scale(1.05);
-}
-.bt-subcta {
-  display: block;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-.bt-section {
-  padding: 2rem 1rem;
-  border-bottom: 1px solid #eee;
-}
-.bt-section h2 {
-  color: #2c3e50;
-  border-left: 5px solid #3498db;
-  padding-left: 1rem;
-}
-.bt-grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-.bt-card {
-  background: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 10px;
-  border-top: 4px solid #3498db;
-}
-.bt-checklist {
-  list-style: none;
-  padding: 0;
-}
-.bt-checklist li { padding: 0.7rem 0; }
-.bt-steps {
-  list-style: none;
-  padding: 0;
-  counter-reset: step;
-}
-.bt-steps li {
-  counter-increment: step;
-  padding: 1rem 0 1rem 3rem;
-  position: relative;
-}
-.bt-steps li:before {
-  content: counter(step);
-  background: #3498db;
-  color: white;
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  left: 0;
-  top: 1rem;
-}
-.bt-note {
-  background: #fffde7;
-  padding: 1rem;
-  border-left: 4px solid #f1c40f;
-  margin-top: 1.5rem;
-}
-.bt-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.bt-table th, .bt-table td {
-  padding: 1rem;
-  border-bottom: 1px solid #ddd;
-  text-align: left;
-}
-.bt-table th { background: #f8f9fa; }
-.bt-faq {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin: 1rem 0;
-  padding: 1rem;
-}
-.bt-faq summary {
-  font-weight: bold;
-  cursor: pointer;
-}
-.bt-price-old {
-  text-decoration: line-through;
-  color: #95a5a6;
-  margin-left: 1rem;
-}
-.bt-buy {
-  text-align: center;
-  background: #f8f9fa;
-  border-radius: 12px;
-  border: 2px dashed #3498db;
-}
-.bt-woo-short {
-  background: #e8f4fc;
-  padding: 1.5rem;
-  border-radius: 8px;
-}
-/* --- NOUVEAUX STYLES POUR HERO AVEC IMAGE --- */
-.bt-hero-with-image {
-  margin-bottom: 3rem;
-}
-.bt-hero-image-container {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  min-height: 500px; /* Ajustez la hauteur minimale ici */
-}
-.bt-hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* L'image couvre tout l'espace sans déformation */
-  display: block;
-}
-.bt-hero-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(75deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 3rem;
-}
-.bt-hero-subtitle {
-  font-size: 1.3rem;
-  margin-bottom: 1.5rem;
-  max-width: 600px;
-}
-.bt-bullets-overlay {
-  list-style: none;
-  padding: 0;
-  margin: 1.5rem 0;
-  max-width: 500px;
-}
-.bt-bullets-overlay li {
-  padding: 0.5rem 0;
-  font-size: 1.1rem;
-}
-.bt-cta-overlay {
-  margin-top: 2rem;
-}
-.bt-btn-hero {
-  display: inline-block;
-  background: #27ae60; /* Vert émeraude */
-  color: white;
-  padding: 1.2rem 3.5rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.3rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
-}
-.bt-btn-hero:hover {
-  background: #219653;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(39, 174, 96, 0.6);
-}
-.bt-subcta-hero {
-  margin-top: 1rem;
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-
-/* Adaptation pour mobile */
-@media (max-width: 768px) {
-  .bt-hero-image-container {
-    min-height: 400px;
-    border-radius: 12px;
-  }
-  .bt-hero-content {
-    padding: 1.5rem;
-    justify-content: flex-end; /* Place le texte en bas sur mobile */
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.4) 80%);
-  }
-  .bt-hero-content h1 {
-    font-size: 2rem;
-  }
-  .bt-hero-subtitle {
-    font-size: 1.1rem;
-  }
-  .bt-btn-hero {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    width: 100%;
-    text-align: center;
-  }
-}
-.bt-hero-image {
-  width: 100%;
-  max-height: 520px;
-  object-fit: cover;
-  border-radius: 14px;
-}
-  
-</style>
+    <script>
+        // Analytics/Conversion Tracking (example)
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                if(typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-123456789/AbC-D_efGhIjKlMnOpQr',
+                        'value': 19.90,
+                        'currency': 'CHF'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
